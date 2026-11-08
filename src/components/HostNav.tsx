@@ -8,7 +8,7 @@ const items = [
   { href: "/host", label: "Dashboard", icon: LayoutDashboard },
   { href: "/host/packages", label: "Packages", icon: Package },
   { href: "/host/packages/new", label: "New", icon: PlusCircle },
-  { href: "/host", label: "Account", icon: User },
+  { href: "/host/profile", label: "Account", icon: User },
 ];
 
 export default function HostNav() {

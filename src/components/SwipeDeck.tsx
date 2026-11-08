@@ -7,6 +7,7 @@ import DestinationCard from "./DestinationCard";
 export type SwipeDeckHandle = {
   like: () => void;
   pass: () => void;
+  getCurrent: () => Destination | undefined;
 };
 
 const SwipeDeck = forwardRef<SwipeDeckHandle, {
@@ -34,7 +35,7 @@ const SwipeDeck = forwardRef<SwipeDeckHandle, {
     }, 260);
   };
 
-  useImperativeHandle(ref, () => ({ like: () => doSwipe("right"), pass: () => doSwipe("left") }), [current, exit]);
+  useImperativeHandle(ref, () => ({ like: () => doSwipe("right"), pass: () => doSwipe("left"), getCurrent: () => current }), [current, exit]);
 
   const onPointerDown = (e: React.PointerEvent) => {
     if (exit) return;

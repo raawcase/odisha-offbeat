@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, Package, Heart, Map } from "lucide-react";
+import { Compass, Package, Heart, Map, User } from "lucide-react";
 
 const items = [
   { href: "/traveler/discover", label: "Discover", icon: Compass },
   { href: "/traveler/packages", label: "Packages", icon: Package },
   { href: "/traveler/saved", label: "Saved", icon: Heart },
   { href: "/traveler/map", label: "Map", icon: Map },
+  { href: "/traveler/profile", label: "Profile", icon: User },
 ];
 
 export default function TravelerNav() {

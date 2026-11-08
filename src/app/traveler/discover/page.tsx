@@ -126,9 +126,12 @@ export default function DiscoverPage() {
           ✕
         </button>
         <button
-          onClick={() => deckRef.current?.like()}
+          onClick={() => {
+            const cur = deckRef.current?.getCurrent();
+            if (cur) router.push(`/traveler/destination/${cur.id}`);
+          }}
           className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg shadow-emerald-600/40"
-          aria-label="Like"
+          aria-label="View details"
         >
           <HeartIcon />
         </button>
