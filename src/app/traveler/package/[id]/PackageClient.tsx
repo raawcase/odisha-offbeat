@@ -99,9 +99,12 @@ export default function PackageClient({ id }: { id: string }) {
           </Link>
         )}
 
-        <button className="w-full rounded-2xl bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/30">
-          Request Booking (mock)
-        </button>
+        <Link
+          href={`/traveler/booking/new?package=${p.id}`}
+          className="block w-full rounded-2xl bg-emerald-600 py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-emerald-600/30"
+        >
+          Request Booking →
+        </Link>
         <p className="text-center text-[10px] text-zinc-400">Prototype: booking request goes to host via WhatsApp/SMS in production.</p>
       </div>
     </AppShell>
