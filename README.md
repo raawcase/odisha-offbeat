@@ -5,15 +5,21 @@ tourist destinations across Odisha, with host-curated packages, day-wise itinera
 "essentials" layer (transport, stays, food, amenities). Built to empower independent travelers
 and rural hosts (homestays, guides, transport, vendors).
 
-## Screens
+## Routes
 
-- `/` — Landing & value proposition
-- `/discover` — Swipe deck of destinations (filter by interest)
-- `/destination/[id]` — Destination detail + essentials + host packages
-- `/packages` & `/package/[id]` — Host packages with day-wise itinerary
-- `/saved` — Saved destinations & packages
-- `/host` — Host dashboard (create package, mock)
-- `/map` — Map view of all destinations
+Traveler (under `/traveler`):
+- `/` (landing) → role selection (Traveler / Host)
+- `/traveler` → redirects to discover
+- `/traveler/discover` — Swipe deck (filter by interest)
+- `/traveler/destination/[id]` — Detail + essentials + host packages
+- `/traveler/packages` & `/traveler/package/[id]` — Host packages with itinerary
+- `/traveler/saved` — Saved destinations & packages
+- `/traveler/map` — Map view of all destinations
+
+Host (under `/host`):
+- `/host` — Dashboard (stats, verified hosts)
+- `/host/packages` — Manage listings
+- `/host/packages/new` — Create package (mock)
 
 ## Run locally
 
