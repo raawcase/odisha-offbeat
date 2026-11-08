@@ -1,0 +1,12 @@
+import HostNav from "@/components/HostNav";
+
+export default function HostLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-zinc-100 to-emerald-50">
+      <div className="mx-auto min-h-screen max-w-md bg-white shadow-2xl shadow-zinc-300/40">
+        <div className="pb-20">{children}</div>
+        <HostNav />
+      </div>
+    </div>
+  );
+}
