@@ -4,13 +4,13 @@ import { Compass, Package, MapPin, Users, ShieldCheck, WifiOff, Home as HomeIcon
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-zinc-100 to-amber-50">
+    <div className="min-h-screen bg-gradient-to-br from-accent-soft via-zinc-100 to-amber-50">
       <div className="mx-auto min-h-screen max-w-md bg-white shadow-2xl shadow-zinc-300/40">
         <div className="relative h-64 w-full overflow-hidden">
           <Image src="/odisha/deomali.jpg" alt="Odisha" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
           <div className="absolute bottom-5 left-5 right-5 text-white">
-            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-300">Odisha Offbeat</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-accent-soft">Odisha Offbeat</p>
             <h1 className="mt-1 text-3xl font-black leading-tight">Discover the unseen Odisha</h1>
             <p className="mt-1 text-sm text-white/85">Swipe. Save. Travel. Empower locals.</p>
           </div>
@@ -20,7 +20,7 @@ export default function Home() {
           <div>
             <h2 className="text-sm font-bold text-zinc-900">Choose your role</h2>
             <div className="mt-3 grid grid-cols-2 gap-3">
-              <Link href="/traveler" className="flex flex-col items-center justify-center rounded-2xl bg-emerald-600 p-5 text-white shadow-lg shadow-emerald-600/30">
+              <Link href="/traveler" className="flex flex-col items-center justify-center rounded-2xl bg-accent p-5 text-white shadow-lg shadow-accent/30">
                 <Compass size={28} />
                 <span className="mt-2 text-sm font-bold">I'm a Traveler</span>
                 <span className="text-[10px] text-white/80">Discover & book trips</span>
@@ -35,11 +35,11 @@ export default function Home() {
 
           <div className="grid grid-cols-2 gap-3">
             <Link href="/traveler/discover" className="rounded-2xl border border-zinc-200 bg-zinc-50 p-4 text-center">
-              <Compass size={20} className="mx-auto text-emerald-600" />
+              <Compass size={20} className="mx-auto text-accent" />
               <p className="mt-1 text-xs font-bold text-zinc-900">Start Swiping</p>
             </Link>
             <Link href="/traveler/packages" className="rounded-2xl border border-zinc-200 bg-zinc-50 p-4 text-center">
-              <Package size={20} className="mx-auto text-emerald-600" />
+              <Package size={20} className="mx-auto text-accent" />
               <p className="mt-1 text-xs font-bold text-zinc-900">Browse Packages</p>
             </Link>
           </div>
@@ -69,7 +69,7 @@ export default function Home() {
 function Feature({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
   return (
     <div className="flex items-start gap-3 rounded-xl bg-zinc-50 p-3">
-      <div className="mt-0.5 text-emerald-600">{icon}</div>
+      <div className="mt-0.5 text-accent">{icon}</div>
       <div>
         <p className="text-sm font-semibold text-zinc-900">{title}</p>
         <p className="text-xs text-zinc-600">{desc}</p>

@@ -21,7 +21,7 @@ export default function MapPage() {
       </header>
 
       <div className="px-5 py-4">
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-zinc-200 bg-gradient-to-br from-emerald-50 via-teal-50 to-amber-50">
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-zinc-200 bg-gradient-to-br from-accent-soft via-teal-50 to-amber-50">
           {/* district labels */}
           <span className="absolute left-[8%] top-[12%] text-[10px] font-semibold text-zinc-400">Mayurbhanj</span>
           <span className="absolute left-[55%] top-[28%] text-[10px] font-semibold text-zinc-400">Angul</span>
@@ -40,7 +40,7 @@ export default function MapPage() {
                 style={{ left: `${x}%`, top: `${y}%` }}
               >
                 <div className="group relative">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-sm shadow-lg ring-2 ring-white transition-transform group-hover:scale-125">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm shadow-lg ring-2 ring-white transition-transform group-hover:scale-125">
                     {d.emoji}
                   </div>
                   <span className="pointer-events-none absolute left-1/2 top-9 -translate-x-1/2 whitespace-nowrap rounded bg-white/90 px-1.5 py-0.5 text-[9px] font-semibold text-zinc-700 opacity-0 shadow group-hover:opacity-100">
@@ -60,12 +60,12 @@ export default function MapPage() {
               href={`/traveler/destination/${d.id}`}
               className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white p-3"
             >
-              <MapPin size={16} className="text-emerald-600" />
+              <MapPin size={16} className="text-accent" />
               <div className="flex-1">
                 <p className="text-sm font-semibold text-zinc-900">{d.name}</p>
                 <p className="text-xs text-zinc-500">{d.district} • {d.duration}</p>
               </div>
-              <span className="text-xs font-bold text-emerald-600">{d.budget}</span>
+              <span className="text-xs font-bold text-accent">{d.budget}</span>
             </Link>
           ))}
         </div>

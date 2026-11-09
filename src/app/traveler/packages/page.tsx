@@ -23,7 +23,7 @@ export default function PackagesPage() {
               href={`/traveler/package/${p.id}`}
               className="block overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm"
             >
-              <div className="relative h-36 w-full bg-gradient-to-br from-emerald-400 to-teal-600">
+              <div className="relative h-36 w-full bg-gradient-to-br from-accent to-teal-600">
                 {d && (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={d.image} alt={d.name} className="h-full w-full object-cover opacity-90" />
@@ -43,7 +43,7 @@ export default function PackagesPage() {
               <div className="p-4">
                 <div className="flex items-center justify-between">
                   <p className="text-xs text-zinc-500">{h?.name} {h?.verified ? "✓ verified" : ""}</p>
-                  <p className="text-base font-black text-emerald-600">₹{p.price.toLocaleString()}</p>
+                  <p className="text-base font-black text-accent">₹{p.price.toLocaleString()}</p>
                 </div>
                 <div className="mt-2 flex gap-3 text-xs text-zinc-600">
                   <span className="flex items-center gap-1"><Clock size={12} /> {p.duration}</span>

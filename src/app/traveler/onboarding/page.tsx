@@ -67,7 +67,7 @@ export default function OnboardingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-amber-50">
+    <div className="min-h-screen bg-gradient-to-br from-accent-soft via-white to-amber-50">
       <div className="mx-auto min-h-screen max-w-md bg-white shadow-2xl shadow-zinc-300/40">
         {/* progress */}
         <div className="px-5 pt-5">
@@ -77,7 +77,7 @@ export default function OnboardingPage() {
           </div>
           <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-zinc-100">
             <div
-              className="h-full rounded-full bg-emerald-600 transition-all"
+              className="h-full rounded-full bg-accent transition-all"
               style={{ width: `${((step + 1) / totalSteps) * 100}%` }}
             />
           </div>
@@ -107,7 +107,7 @@ export default function OnboardingPage() {
                     key={s.id}
                     onClick={() => applySuggestion(s.id)}
                     className={`rounded-2xl border p-4 text-left transition-all ${
-                      style === s.id ? "border-emerald-500 bg-emerald-50 shadow-md" : "border-zinc-200 bg-white"
+                      style === s.id ? "border-accent bg-accent-soft shadow-md" : "border-zinc-200 bg-white"
                     }`}
                   >
                     <div className="text-3xl">{s.emoji}</div>
@@ -129,7 +129,7 @@ export default function OnboardingPage() {
                       key={i}
                       onClick={() => toggleInterest(i)}
                       className={`flex items-center gap-2 rounded-2xl border p-3 text-left transition-all ${
-                        active ? "border-emerald-500 bg-emerald-50" : "border-zinc-200 bg-white"
+                        active ? "border-accent bg-accent-soft" : "border-zinc-200 bg-white"
                       }`}
                     >
                       <span className="text-xl">{interestEmoji[i]}</span>
@@ -150,14 +150,14 @@ export default function OnboardingPage() {
                     key={b.id}
                     onClick={() => setBudget(b.id)}
                     className={`flex w-full items-center justify-between rounded-2xl border p-4 transition-all ${
-                      budget === b.id ? "border-emerald-500 bg-emerald-50" : "border-zinc-200 bg-white"
+                      budget === b.id ? "border-accent bg-accent-soft" : "border-zinc-200 bg-white"
                     }`}
                   >
                     <div>
                       <p className="text-sm font-bold text-zinc-900">{b.label}</p>
                       <p className="text-[11px] text-zinc-500">{b.desc}</p>
                     </div>
-                    <span className="text-lg font-black text-emerald-600">{b.id}</span>
+                    <span className="text-lg font-black text-accent">{b.id}</span>
                   </button>
                 ))}
               </div>
@@ -172,7 +172,7 @@ export default function OnboardingPage() {
                     key={d.id}
                     onClick={() => setDuration(d.id)}
                     className={`flex w-full items-center justify-between rounded-2xl border p-4 transition-all ${
-                      duration === d.id ? "border-emerald-500 bg-emerald-50" : "border-zinc-200 bg-white"
+                      duration === d.id ? "border-accent bg-accent-soft" : "border-zinc-200 bg-white"
                     }`}
                   >
                     <div>
@@ -182,8 +182,8 @@ export default function OnboardingPage() {
                   </button>
                 ))}
               </div>
-              <div className="mt-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-amber-50 p-4 text-center">
-                <Sparkles className="mx-auto text-emerald-600" size={24} />
+              <div className="mt-6 rounded-2xl bg-gradient-to-br from-accent-soft to-amber-50 p-4 text-center">
+                <Sparkles className="mx-auto text-accent" size={24} />
                 <p className="mt-2 text-sm font-bold text-zinc-900">You're all set{name ? `, ${name}` : ""}!</p>
                 <p className="mt-1 text-xs text-zinc-600">
                   We'll show {interests.length || "all"} location types matching your {style || "travel"} style.
@@ -207,14 +207,14 @@ export default function OnboardingPage() {
             {step < totalSteps - 1 ? (
               <button
                 onClick={() => setStep((s) => s + 1)}
-                className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-emerald-600 py-3 text-sm font-bold text-white shadow-lg shadow-emerald-600/30"
+                className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-accent py-3 text-sm font-bold text-white shadow-lg shadow-accent/30"
               >
                 Continue <ChevronRight size={16} />
               </button>
             ) : (
               <button
                 onClick={finish}
-                className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-emerald-600 py-3 text-sm font-bold text-white shadow-lg shadow-emerald-600/30"
+                className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-accent py-3 text-sm font-bold text-white shadow-lg shadow-accent/30"
               >
                 Start exploring <Sparkles size={16} />
               </button>

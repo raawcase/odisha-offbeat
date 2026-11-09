@@ -14,7 +14,7 @@ export default function HostPackagesPage() {
       <div className="space-y-3 px-5 py-4">
         <Link
           href="/host/packages/new"
-          className="block rounded-2xl border-2 border-dashed border-emerald-300 bg-emerald-50 p-4 text-center text-sm font-semibold text-emerald-700"
+          className="block rounded-2xl border-2 border-dashed border-accent-soft bg-accent-soft p-4 text-center text-sm font-semibold text-accent-ink"
         >
           + Create new package
         </Link>
@@ -25,7 +25,7 @@ export default function HostPackagesPage() {
             <div key={p.id} className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm">
               <div className="flex items-center justify-between">
                 <h3 className="font-bold text-zinc-900">{p.title}</h3>
-                <span className="text-sm font-black text-emerald-600">₹{p.price.toLocaleString()}</span>
+                <span className="text-sm font-black text-accent">₹{p.price.toLocaleString()}</span>
               </div>
               <p className="mt-1 text-xs text-zinc-500">{d?.name} • {h?.name}</p>
               <div className="mt-2 flex gap-3 text-xs text-zinc-600">

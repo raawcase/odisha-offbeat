@@ -39,7 +39,7 @@ export default function PackageClient({ id }: { id: string }) {
       <div className="space-y-5 px-5 py-5">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-2xl font-black text-emerald-600">₹{p.price.toLocaleString()}</p>
+            <p className="text-2xl font-black text-accent">₹{p.price.toLocaleString()}</p>
             <p className="text-xs text-zinc-500">per person</p>
           </div>
           <div className="text-right text-xs text-zinc-600">
@@ -51,9 +51,9 @@ export default function PackageClient({ id }: { id: string }) {
 
         {h && (
           <div className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white p-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-50 text-2xl">{h.avatar}</div>
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-soft text-2xl">{h.avatar}</div>
             <div className="flex-1">
-              <p className="text-sm font-semibold text-zinc-900">{h.name} {h.verified && <span className="text-emerald-600">✓ verified</span>}</p>
+              <p className="text-sm font-semibold text-zinc-900">{h.name} {h.verified && <span className="text-accent">✓ verified</span>}</p>
               <p className="text-xs text-zinc-500">{h.type} • {h.location}</p>
               <p className="text-xs text-zinc-600">{h.bio}</p>
             </div>
@@ -64,7 +64,7 @@ export default function PackageClient({ id }: { id: string }) {
           <h3 className="mb-2 text-sm font-bold text-zinc-900">What's included</h3>
           <div className="flex flex-wrap gap-1.5">
             {p.includes.map((inc) => (
-              <span key={inc} className="flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+              <span key={inc} className="flex items-center gap-1 rounded-full bg-accent-soft px-3 py-1 text-xs font-medium text-accent-ink">
                 <Check size={11} /> {inc}
               </span>
             ))}
@@ -77,7 +77,7 @@ export default function PackageClient({ id }: { id: string }) {
             {p.itinerary.map((it) => (
               <div key={it.day} className="rounded-xl border border-zinc-200 bg-white p-3">
                 <div className="flex items-center gap-2">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-600 text-xs font-bold text-white">{it.day}</span>
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">{it.day}</span>
                   <p className="text-sm font-bold text-zinc-900">{it.title}</p>
                 </div>
                 <ul className="mt-2 space-y-1 pl-9 text-xs text-zinc-600">
@@ -101,7 +101,7 @@ export default function PackageClient({ id }: { id: string }) {
 
         <Link
           href={`/traveler/booking/new?package=${p.id}`}
-          className="block w-full rounded-2xl bg-emerald-600 py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-emerald-600/30"
+          className="block w-full rounded-2xl bg-accent py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-accent/30"
         >
           Request Booking →
         </Link>

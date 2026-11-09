@@ -45,7 +45,7 @@ export default function DestinationClient({ id }: { id: string }) {
       <div className="space-y-5 px-5 py-5">
         <div className="flex flex-wrap gap-2">
           {d.tags.map((t) => (
-            <span key={t} className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">{t}</span>
+            <span key={t} className="rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold text-accent-ink">{t}</span>
           ))}
         </div>
 
@@ -83,7 +83,7 @@ export default function DestinationClient({ id }: { id: string }) {
                   >
                     <div className="flex items-center justify-between">
                       <h4 className="font-bold text-zinc-900">{p.title}</h4>
-                      <span className="text-sm font-black text-emerald-600">₹{p.price.toLocaleString()}</span>
+                      <span className="text-sm font-black text-accent">₹{p.price.toLocaleString()}</span>
                     </div>
                     <p className="mt-1 text-xs text-zinc-500">{p.duration} • {p.groupSize} people • ⭐ {p.rating} ({p.reviews})</p>
                     <p className="mt-1 text-xs text-zinc-600">by {host?.name} {host?.verified ? "✓" : ""}</p>
@@ -102,9 +102,9 @@ export default function DestinationClient({ id }: { id: string }) {
               if (!h) return null;
               return (
                 <div key={h.id} className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white p-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-xl">{h.avatar}</div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-soft text-xl">{h.avatar}</div>
                   <div className="flex-1">
-                    <p className="text-sm font-semibold text-zinc-900">{h.name} {h.verified && <span className="text-emerald-600">✓</span>}</p>
+                    <p className="text-sm font-semibold text-zinc-900">{h.name} {h.verified && <span className="text-accent">✓</span>}</p>
                     <p className="text-xs text-zinc-500">{h.type} • {h.location}</p>
                     <p className="text-xs text-zinc-600">{h.bio}</p>
                   </div>

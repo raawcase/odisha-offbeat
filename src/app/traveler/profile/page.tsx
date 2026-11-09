@@ -39,7 +39,7 @@ export default function TravelerProfilePage() {
 
       <div className="space-y-5 px-5 py-4">
         {/* avatar + name */}
-        <div className="flex items-center gap-4 rounded-2xl bg-gradient-to-br from-emerald-50 to-amber-50 p-4">
+        <div className="flex items-center gap-4 rounded-2xl bg-gradient-to-br from-accent-soft to-amber-50 p-4">
           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-3xl shadow">
             {prefs?.style === "Solo" ? "🎒" : prefs?.style === "Couple" ? "💑" : prefs?.style === "Family" ? "👨‍👩‍👧‍👦" : prefs?.style === "Friends" ? "👯" : "🧳"}
           </div>
@@ -66,7 +66,7 @@ export default function TravelerProfilePage() {
             <h3 className="mb-2 text-sm font-bold text-zinc-900">Your interests</h3>
             <div className="flex flex-wrap gap-1.5">
               {prefs.interests.map((i) => (
-                <span key={i} className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">{i}</span>
+                <span key={i} className="rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold text-accent-ink">{i}</span>
               ))}
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function TravelerProfilePage() {
             <div className="space-y-2">
               {bookings.slice(0, 3).map((b) => (
                 <Link key={b.id} href={`/traveler/booking/${b.id}`} className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white p-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-lg">✅</div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-soft text-lg">✅</div>
                   <div className="flex-1">
                     <p className="text-sm font-bold text-zinc-900">{b.title}</p>
                     <p className="text-xs text-zinc-500">{b.destination} • {b.date} • {b.id}</p>
@@ -96,7 +96,7 @@ export default function TravelerProfilePage() {
           <div>
             <div className="mb-2 flex items-center justify-between">
               <h3 className="text-sm font-bold text-zinc-900">Saved destinations</h3>
-              <Link href="/traveler/saved" className="text-xs font-semibold text-emerald-600">View all</Link>
+              <Link href="/traveler/saved" className="text-xs font-semibold text-accent">View all</Link>
             </div>
             <div className="flex gap-2 overflow-x-auto pb-1">
               {saved.destinations.slice(0, 6).map((id) => {
@@ -145,7 +145,7 @@ function Stat({ label, value }: { label: string; value: number }) {
 function SettingsRow({ icon, label, href }: { icon: React.ReactNode; label: string; href: string }) {
   return (
     <Link href={href} className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white px-4 py-3">
-      <div className="text-emerald-600">{icon}</div>
+      <div className="text-accent">{icon}</div>
       <span className="flex-1 text-sm font-semibold text-zinc-800">{label}</span>
       <ChevronRight size={16} className="text-zinc-400" />
     </Link>

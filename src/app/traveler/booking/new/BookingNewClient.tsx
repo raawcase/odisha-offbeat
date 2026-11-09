@@ -53,7 +53,7 @@ export default function BookingNewClient({ packageId }: { packageId?: string }) 
     return (
       <div className="p-6 text-center">
         <p className="text-sm text-zinc-600">No package selected.</p>
-        <Link href="/traveler/packages" className="mt-3 inline-block rounded-full bg-emerald-600 px-4 py-2 text-xs font-semibold text-white">
+        <Link href="/traveler/packages" className="mt-3 inline-block rounded-full bg-accent px-4 py-2 text-xs font-semibold text-white">
           Browse packages
         </Link>
       </div>
@@ -137,7 +137,7 @@ export default function BookingNewClient({ packageId }: { packageId?: string }) 
           <button
             type="submit"
             disabled={submitting}
-            className="w-full rounded-2xl bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/30 disabled:opacity-60"
+            className="w-full rounded-2xl bg-accent py-3.5 text-sm font-bold text-white shadow-lg shadow-accent/30 disabled:opacity-60"
           >
             {submitting ? "Confirming…" : `Confirm booking • ₹${(pkg.price * parseInt(travelers || "1")).toLocaleString()}`}
           </button>

@@ -85,7 +85,7 @@ export default function DiscoverPage() {
           </div>
         </div>
         {prefs?.style && (
-          <div className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700">
+          <div className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-3 py-1 text-[11px] font-semibold text-accent-ink">
             <Sparkles size={11} /> Personalized for {prefs.style.toLowerCase()} travel
           </div>
         )}
@@ -97,7 +97,7 @@ export default function DiscoverPage() {
                 key={i}
                 onClick={() => toggleInterest(i)}
                 className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
-                  active ? "bg-emerald-600 text-white" : "bg-zinc-100 text-zinc-600"
+                  active ? "bg-accent text-white" : "bg-zinc-100 text-zinc-600"
                 }`}
               >
                 {i}
@@ -130,7 +130,7 @@ export default function DiscoverPage() {
             const cur = deckRef.current?.getCurrent();
             if (cur) router.push(`/traveler/destination/${cur.id}`);
           }}
-          className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg shadow-emerald-600/40"
+          className="flex h-16 w-16 items-center justify-center rounded-full bg-accent text-white shadow-lg shadow-accent/40"
           aria-label="View details"
         >
           <HeartIcon />

@@ -23,7 +23,7 @@ export default function SavedPage() {
             <div className="text-4xl">🤍</div>
             <p className="mt-2 text-sm font-semibold text-zinc-700">Nothing saved yet</p>
             <p className="mt-1 text-xs text-zinc-500">Swipe right on destinations you love.</p>
-            <Link href="/traveler/discover" className="mt-3 inline-block rounded-full bg-emerald-600 px-4 py-2 text-xs font-semibold text-white">
+            <Link href="/traveler/discover" className="mt-3 inline-block rounded-full bg-accent px-4 py-2 text-xs font-semibold text-white">
               Start discovering
             </Link>
           </div>

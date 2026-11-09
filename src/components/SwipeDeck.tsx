@@ -66,7 +66,7 @@ const SwipeDeck = forwardRef<SwipeDeckHandle, {
         <p className="mt-1 text-sm text-zinc-500">Check your Saved trips or reset deck.</p>
         <button
           onClick={() => setIndex(0)}
-          className="mt-4 rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white"
+          className="mt-4 rounded-full bg-accent px-5 py-2 text-sm font-semibold text-white"
         >
           Start over
         </button>
@@ -99,7 +99,7 @@ const SwipeDeck = forwardRef<SwipeDeckHandle, {
       >
         <DestinationCard destination={current} />
         <div
-          className="pointer-events-none absolute right-6 top-8 rounded-xl border-4 border-emerald-400 px-4 py-1 text-2xl font-black text-emerald-400"
+          className="pointer-events-none absolute right-6 top-8 rounded-xl border-4 border-accent px-4 py-1 text-2xl font-black text-accent"
           style={{ opacity: likeOpacity, transform: "rotate(-15deg)" }}
         >
           LIKE

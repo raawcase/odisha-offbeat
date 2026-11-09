@@ -19,7 +19,7 @@ export default function HostProfilePage() {
       </header>
 
       <div className="space-y-5 px-5 py-4">
-        <div className="flex items-center gap-4 rounded-2xl bg-gradient-to-br from-amber-50 to-emerald-50 p-4">
+        <div className="flex items-center gap-4 rounded-2xl bg-gradient-to-br from-amber-50 to-accent-soft p-4">
           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-3xl shadow">
             {host?.avatar || "🏡"}
           </div>
@@ -27,7 +27,7 @@ export default function HostProfilePage() {
             <p className="text-lg font-black text-zinc-900">{host?.name || "Host"}</p>
             <p className="text-xs text-zinc-600">{host?.type} • {host?.location}</p>
             {verified && (
-              <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-700">
+              <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-accent-soft px-2 py-0.5 text-[10px] font-bold text-accent-ink">
                 <ShieldCheck size={10} /> Verified host
               </span>
             )}
@@ -43,15 +43,15 @@ export default function HostProfilePage() {
           <Stat label="Earnings" value="₹4.2L" />
         </div>
 
-        <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+        <div className="rounded-2xl border border-accent-soft bg-accent-soft p-4">
           <div className="flex items-center gap-2">
-            <Award size={18} className="text-emerald-600" />
-            <p className="text-sm font-bold text-emerald-900">Verified host badge</p>
+            <Award size={18} className="text-accent" />
+            <p className="text-sm font-bold text-accent-ink">Verified host badge</p>
           </div>
-          <p className="mt-1 text-xs text-emerald-700">
+          <p className="mt-1 text-xs text-accent-ink">
             Verified hosts get 3x more bookings. Complete KYC, photos & community references to earn the badge.
           </p>
-          <button className="mt-2 rounded-full bg-emerald-600 px-4 py-1.5 text-xs font-semibold text-white">
+          <button className="mt-2 rounded-full bg-accent px-4 py-1.5 text-xs font-semibold text-white">
             {verified ? "Manage verification" : "Apply for verification"}
           </button>
         </div>
@@ -86,7 +86,7 @@ function Stat({ label, value }: { label: string; value: string | number }) {
 function SettingsRow({ icon, label, href }: { icon: React.ReactNode; label: string; href: string }) {
   return (
     <Link href={href} className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white px-4 py-3">
-      <div className="text-emerald-600">{icon}</div>
+      <div className="text-accent">{icon}</div>
       <span className="flex-1 text-sm font-semibold text-zinc-800">{label}</span>
       <ChevronRight size={16} className="text-zinc-400" />
     </Link>

@@ -25,7 +25,7 @@ export default function TravelerNav() {
               key={it.href}
               href={it.href}
               className={`flex flex-col items-center gap-0.5 px-3 py-1 text-[10px] font-medium transition-colors ${
-                active ? "text-emerald-600" : "text-zinc-500"
+                active ? "text-accent" : "text-zinc-500"
               }`}
             >
               <Icon size={20} strokeWidth={active ? 2.4 : 1.8} />
