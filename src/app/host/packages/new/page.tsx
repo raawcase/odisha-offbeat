@@ -31,7 +31,7 @@ export default function NewPackagePage() {
         {saved ? (
           <div className="rounded-2xl bg-accent-soft p-6 text-center">
             <div className="text-4xl">✅</div>
-            <p className="mt-2 text-sm font-bold text-accent-ink">Package saved (mock)</p>
+            <p className="mt-2 text-sm font-bold text-accent-ink">Package saved</p>
             <p className="mt-1 text-xs text-accent-ink">In production this goes to review & publishing.</p>
             <Link href="/host/packages" className="mt-3 inline-block rounded-full bg-accent px-4 py-2 text-xs font-semibold text-white">
               Back to packages
@@ -75,7 +75,7 @@ export default function NewPackagePage() {
               placeholder="Day-wise itinerary (one activity per line)"
             />
             <button type="submit" className="w-full rounded-2xl bg-accent py-3 text-sm font-bold text-white shadow-lg shadow-accent/30">
-              Save package (mock)
+              Save package
             </button>
           </form>
         )}

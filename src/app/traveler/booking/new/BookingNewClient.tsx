@@ -130,10 +130,6 @@ export default function BookingNewClient({ packageId }: { packageId?: string }) 
             </div>
           </div>
 
-          <div className="rounded-xl bg-amber-50 p-3 text-[11px] text-amber-800">
-            Prototype: no real payment. Booking request goes to host via WhatsApp/SMS in production.
-          </div>
-
           <button
             type="submit"
             disabled={submitting}

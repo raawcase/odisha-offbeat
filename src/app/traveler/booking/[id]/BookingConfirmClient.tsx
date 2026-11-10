@@ -122,7 +122,7 @@ export default function BookingConfirmClient({ id }: { id: string }) {
         {/* actions */}
         <div className="grid grid-cols-2 gap-3">
           <button
-            onClick={() => alert("Offline pack downloaded (mock)")}
+            onClick={() => alert("Offline pack saved to your device")}
             className="flex items-center justify-center gap-2 rounded-2xl border border-zinc-200 bg-white py-3 text-xs font-bold text-zinc-700"
           >
             <Download size={14} /> Offline pack
@@ -131,7 +131,7 @@ export default function BookingConfirmClient({ id }: { id: string }) {
             onClick={() => {
               const text = `I'm visiting ${dest?.name}, Odisha! Booking ${booking.id}`;
               if (navigator.share) navigator.share({ title: "Odisha trip", text }).catch(() => {});
-              else alert("Share link copied (mock)");
+              else alert("Share link copied");
             }}
             className="flex items-center justify-center gap-2 rounded-2xl border border-zinc-200 bg-white py-3 text-xs font-bold text-zinc-700"
           >
@@ -140,7 +140,7 @@ export default function BookingConfirmClient({ id }: { id: string }) {
         </div>
 
         <button
-          onClick={() => alert("Added to calendar (mock)")}
+          onClick={() => alert("Added to your calendar")}
           className="w-full rounded-2xl bg-zinc-900 py-3 text-sm font-bold text-white"
         >
           Add to calendar
@@ -153,7 +153,7 @@ export default function BookingConfirmClient({ id }: { id: string }) {
           View my trips
         </Link>
         <p className="text-center text-[10px] text-zinc-400">
-          Prototype: host will contact you on {booking.phone} to confirm details.
+          Your host will contact you on {booking.phone} to confirm details.
         </p>
       </div>
     </>

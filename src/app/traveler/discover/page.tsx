@@ -40,13 +40,9 @@ export default function DiscoverPage() {
   }, [router]);
 
   const filtered = useMemo(() => {
-    const base = selected.length === 0 ? destinations : destinations.filter((d) => d.tags.some((t) => selected.includes(t)));
-    // budget filter
-    if (prefs?.budget) {
-      return base.filter((d) => d.budget === prefs.budget || true);
-    }
-    return base;
-  }, [selected, prefs]);
+    if (selected.length === 0) return destinations;
+    return destinations.filter((d) => d.tags.some((t) => selected.includes(t)));
+  }, [selected]);
 
   const toggleInterest = (i: Interest) => {
     setSelected((prev) => (prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i]));

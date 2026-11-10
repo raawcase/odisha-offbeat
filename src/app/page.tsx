@@ -54,12 +54,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-2xl bg-gradient-to-br from-amber-50 to-rose-50 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-amber-700">Pitch note</p>
-            <p className="mt-1 text-sm text-zinc-700">
-              Prototype for Startup Odisha — zero-cost infra (Next.js + Vercel + Supabase free tier). Swipe UX, host packages, essentials & saved trips are live; booking is mocked.
-            </p>
-          </div>
+
         </div>
       </div>
     </div>

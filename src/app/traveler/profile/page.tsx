@@ -126,7 +126,7 @@ export default function TravelerProfilePage() {
           onClick={logout}
           className="flex w-full items-center justify-center gap-2 rounded-2xl border border-rose-200 bg-rose-50 py-3 text-sm font-bold text-rose-600"
         >
-          <LogOut size={16} /> Log out (mock)
+          <LogOut size={16} /> Log out
         </button>
       </div>
     </>

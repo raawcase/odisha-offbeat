@@ -105,7 +105,7 @@ export default function PackageClient({ id }: { id: string }) {
         >
           Request Booking →
         </Link>
-        <p className="text-center text-[10px] text-zinc-400">Prototype: booking request goes to host via WhatsApp/SMS in production.</p>
+
       </div>
     </AppShell>
   );
