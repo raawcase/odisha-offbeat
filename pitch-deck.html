@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Odisha Offbeat — Pitch Deck</title>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --ink: #0a0a0a;
+    --muted: #52525b;
+    --accent: #c2410c;
+    --accent-soft: #fed7aa;
+    --line: #e4e4e7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #18181b; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .deck { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+  .slide {
+    background: var(--bg);
+    border-radius: 20px;
+    padding: 72px 80px;
+    margin-bottom: 32px;
+    min-height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    page-break-after: always;
+    break-after: page;
+  }
+  .slide.cover { background: linear-gradient(135deg, #0a0a0a 0%, #1c1917 100%); color: #fff; }
+  .slide.cover .eyebrow { color: var(--accent-soft); }
+  .slide.cover h1 { color: #fff; }
+  .slide.cover p { color: rgba(255,255,255,0.75); }
+  .slide.cover .accent-bar { background: var(--accent); }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+  h1 { font-size: 56px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 24px; }
+  h2 { font-size: 34px; font-weight: 400; letter-spacing: -0.01em; line-height: 1.15; margin-bottom: 20px; }
+  h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--accent); }
+  p { font-size: 19px; line-height: 1.55; color: var(--muted); margin-bottom: 16px; }
+  p.lead { font-size: 22px; color: var(--ink); }
+  .accent-bar { width: 64px; height: 4px; background: var(--accent); border-radius: 2px; margin-bottom: 28px; }
+  ul { list-style: none; padding: 0; }
+  ul li { font-size: 19px; line-height: 1.5; color: var(--muted); padding: 10px 0 10px 28px; position: relative; border-bottom: 1px solid var(--line); }
+  ul li:last-child { border-bottom: none; }
+  ul li::before { content: ""; position: absolute; left: 0; top: 20px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 24px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+  .card h3 { margin-bottom: 6px; }
+  .card p { font-size: 15px; margin: 0; }
+  .stat { text-align: center; }
+  .stat .num { font-size: 44px; font-weight: 300; color: var(--accent); letter-spacing: -0.02em; }
+  .stat .lbl { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .quote { font-size: 26px; font-style: italic; font-weight: 300; color: var(--ink); line-height: 1.4; border-left: 3px solid var(--accent); padding-left: 24px; margin: 24px 0; }
+  .pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink); font-size: 13px; font-weight: 600; margin: 4px 4px 4px 0; }
+  .footer { position: absolute; bottom: 28px; left: 80px; right: 80px; display: flex; justify-content: space-between; font-size: 11px; color: #a1a1aa; letter-spacing: 0.1em; text-transform: uppercase; }
+  .slide.cover .footer { color: rgba(255,255,255,0.4); }
+  @media print {
+    body { background: #fff; }
+    .deck { padding: 0; max-width: none; }
+    .slide { box-shadow: none; border-radius: 0; margin: 0; page-break-after: always; min-height: 100vh; }
+    .no-print { display: none; }
+  }
+  .toolbar { position: fixed; top: 20px; right: 20px; z-index: 50; display: flex; gap: 10px; }
+  .toolbar button { background: var(--accent); color: #fff; border: none; padding: 10px 18px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 8px 24px rgba(194,65,12,0.35); }
+  .toolbar button.secondary { background: #fff; color: var(--ink); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .hero-img { width: 100%; height: 260px; border-radius: 14px; object-fit: cover; margin-top: 20px; background: #e4e4e7; }
+  .two-col { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+  .timeline { margin-top: 24px; }
+  .timeline .row { display: grid; grid-template-columns: 120px 1fr; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .timeline .row:last-child { border-bottom: none; }
+  .timeline .when { font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; }
+  .timeline .what { font-size: 17px; color: var(--muted); }
+  .timeline .what strong { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <button class="secondary" onclick="window.print()">Export to PDF</button>
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
+</div>
+
+<div class="deck">
+
+<!-- Slide 1: Cover -->
+<section class="slide cover">
+  <div class="eyebrow">Startup Odisha Pitch</div>
+  <div class="accent-bar"></div>
+  <h1>Odisha Offbeat</h1>
+  <p class="lead">Discover the unseen Odisha. Swipe. Save. Travel. Empower locals.</p>
+  <p>A mobile-first discovery platform that surfaces hidden tourist destinations across Odisha and connects independent travelers with verified local hosts through curated packages.</p>
+  <div class="footer">
+    <span>Odisha Offbeat</span>
+    <span>Live demo: odisha-offbeat.vercel.app</span>
+  </div>
+</section>
+
+<!-- Slide 2: Problem -->
+<section class="slide">
+  <div class="eyebrow">01 — Problem</div>
+  <div class="accent-bar"></div>
+  <h2>Magnificent destinations remain invisible</h2>
+  <p class="lead">Odisha's tourism is concentrated in Puri, Konark and Bhubaneswar. Districts like Koraput, Mayurbhanj, Kandhamal, Rayagada and Sundargarh hold spectacular, crowd-free places that travelers never find.</p>
+  <div class="grid2">
+    <div>
+      <h3>For travelers</h3>
+      <ul>
+        <li>Fragmented, unreliable information about attractions, transport, food and amenities</li>
+        <li>No centralized way to discover off-beat places</li>
+        <li>High friction to plan a trip to remote areas</li>
+      </ul>
+    </div>
+    <div>
+      <h3>For locals</h3>
+      <ul>
+        <li>Homestays, guides, transport and vendors have no digital reach</li>
+        <li>Income concentrated in peak season and famous spots</li>
+        <li>Young people migrate out for lack of opportunity</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>Problem</span><span>Odisha Offbeat</span></div>
+</section>
+
+<!-- Slide 3: Solution -->
+<section class="slide">
+  <div class="eyebrow">02 — Solution</div>
+  <div class="accent-bar"></div>
+  <h2>Swipe to discover. Book to experience.</h2>
+  <p class="lead">A Tinder-style swipe interface turns discovery into a 3-second decision. Each card is a destination; swipe right to save, left to pass. Tap the heart to reveal full details, essentials and host packages.</p>
+  <div class="grid3">
+    <div class="card">
+      <h3>Discover</h3>
+      <p>Curated destination cards with interest filters (Tribal, Beaches, Trekking, Wildlife, Heritage, Cuisine, Waterfalls, Eco).</p>
+    </div>
+    <div class="card">
+      <h3>Plan</h3>
+      <p>Essentials layer: transport, stays, food, amenities. Host-curated packages with day-wise itineraries.</p>
+    </div>
+    <div class="card">
+      <h3>Book</h3>
+      <p>One-tap booking request with a confirmation "aha moment" — itinerary, offline pack, share, calendar.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Solution</span><span>Odisha Offbeat</span></div>
+</section>
+
+<!-- Slide 4: Product -->
+<section class="slide">
+  <div class="eyebrow">03 — Product</div>
+  <div class="accent-bar"></div>
+  <h2>Two apps, one platform</h2>
+  <div class="two-col">
+    <div>
+      <h3>Traveler app</h3>
+      <ul>
+        <li>5-step onboarding personalizes the feed by travel style, interests, budget, trip length</li>
+        <li>Swipe deck with interest filters and a heart that opens full details</li>
+        <li>Destination detail: highlights, essentials, host packages, local hosts</li>
+        <li>Package detail with day-wise itinerary and inclusions</li>
+        <li>Dummy booking → confirmation with offline pack, share, calendar</li>
+        <li>Saved trips, map view, profile with bookings</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Host app</h3>
+      <ul>
+        <li>Dashboard: listings, bookings, earnings</li>
+        <li>Create package: title, destination, price, duration, itinerary</li>
+        <li>Manage listings, view bookings, respond to travelers</li>
+        <li>Verified host badge (KYC + community references)</li>
+        <li>Profile & payout settings</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>Product</span><span>Odisha Offbeat</span></div>
+</section>
+
+<!-- Slide 5: Market -->
+<section class="slide">
+  <div class="eyebrow">04 — Market</div>
+  <div class="accent-bar"></div>
+  <h2>India's tourism is going off-beat</h2>
+  <div class="grid3">
+    <div class="stat"><div class="num">1.4B</div><div class="lbl">Domestic trips in India (annual, growing)</div></div>
+    <div class="stat"><div class="num">30+</div><div class="lbl">Off-beat districts in Odisha with untapped tourism</div></div>
+    <div class="stat"><div class="num">60%</div><div class="lbl">Travelers now prefer experiential / local stays</div></div>
+  </div>
+  <p style="margin-top:28px;">Odisha welcomed ~10M tourists in 2024, but 80%+ concentrate in 3 circuits. The long tail — tribal, eco, waterfall, heritage destinations — is invisible. We target independent travelers (25-45), nature enthusiasts and cultural explorers, plus rural hosts in 12+ districts.</p>
+  <div class="footer"><span>Market</span><span>Odisha Offbeat</span></div>
+</section>
+
+<!-- Slide 6: Business model -->
+<section class="slide">
+  <div class="eyebrow">05 — Business model</div>
+  <div class="accent-bar"></div>
+  <h2>Commission on experiences, not ads</h2>
+  <ul>
+    <li><strong>Commission on package bookings</strong> — 8–15% per booking (primary revenue)</li>
+    <li><strong>Host subscription</strong> — featured placement & analytics (₹499–1,999/month)</li>
+    <li><strong>Affiliate</strong> on transport, food and stay bookings</li>
+    <li><strong>Sponsored essentials</strong> — transparently labeled local vendor listings</li>
+  </ul>
+  <div class="quote">"We make money only when a local host earns money."</div>
+  <div class="footer"><span>Business model</span><span>Odisha Offbeat</span></div>
+</section>
+
+<!-- Slide 7: Traction / Roadmap -->
+<section class="slide">
+  <div class="eyebrow">06 — Traction & roadmap</div>
+  <div class="accent-bar"></div>
+  <h2>Prototype today. Platform tomorrow.</h2>
+  <div class="timeline">
+    <div class="row"><div class="when">Now</div><div class="what"><strong>Working prototype</strong> — swipe discovery, onboarding, packages, booking, host dashboard, profiles. 12 destinations, 7 hosts, 6 packages seeded. Live on Vercel.</div></div>
+    <div class="row"><div class="when">Q1 2027</div><div class="what"><strong>Pilot</strong> — onboard 50 verified hosts in Koraput, Mayurbhanj, Kandhamal. Real bookings via WhatsApp/SMS. Supabase backend + auth.</div></div>
+    <div class="row"><div class="when">Q2 2027</div><div class="what"><strong>Payments</strong> — Razorpay/UPI escrow, reviews with photo verification, offline packs.</div></div>
+    <div class="row"><div class="when">Q3 2027</div><div class="what"><strong>Scale</strong> — expand to 15 districts, multilingual (Odia, Hindi, English), host mobile app, analytics.</div></div>
+  </div>
+  <div class="footer"><span>Roadmap</span><span>Odisha Offbeat</span></div>
+</section>
+
+<!-- Slide 8: Competitive advantage -->
+<section class="slide">
+  <div class="eyebrow">07 — Why us</div>
+  <div class="accent-bar"></div>
+  <h2>Built for Odisha, by Odisha</h2>
+  <div class="grid2">
+    <div>
+      <h3>Differentiation</h3>
+      <ul>
+        <li>Swipe UX lowers friction for inspiration-phase travelers</li>
+        <li>Host-curated packages solve "what do I actually do there?"</li>
+        <li>Essentials layer (transport, stays, food, amenities) for remote areas</li>
+        <li>Verified hosts with community references</li>
+        <li>Offline-first for low-connectivity districts</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Moat</h3>
+      <ul>
+        <li>Local trust network & verified host community</li>
+        <li>Hyper-local content (tribal haats, coffee trails, medicinal hills)</li>
+        <li>Zero-cost infra keeps us lean and price-competitive</li>
+        <li>First-mover in Odisha's off-beat segment</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>Advantage</span><span>Odisha Offbeat</span></div>
+</section>
+
+<!-- Slide 9: Impact -->
+<section class="slide">
+  <div class="eyebrow">08 — Impact</div>
+  <div class="accent-bar"></div>
+  <h2>Empowering rural Odisha</h2>
+  <p class="lead">Every booking flows directly to a homestay owner, guide, driver or vendor in a tribal or remote district — not to a metro aggregator.</p>
+  <div class="grid3">
+    <div class="card"><h3>Income</h3><p>Direct earnings for 100+ rural hosts in year one; 3x boost for verified hosts.</p></div>
+    <div class="card"><h3>Retention</h3><p>Keeps youth in villages by creating digital livelihoods around tourism.</p></div>
+    <div class="card"><h3>Culture</h3><p>Preserves tribal art, cuisine and traditions by making them economically valuable.</p></div>
+  </div>
+  <div class="footer"><span>Impact</span><span>Odisha Offbeat</span></div>
+</section>
+
+<!-- Slide 10: Ask -->
+<section class="slide">
+  <div class="eyebrow">09 — The ask</div>
+  <div class="accent-bar"></div>
+  <h2>Partner with us to put Odisha on the map</h2>
+  <ul>
+    <li><strong>Grant / seed funding</strong> to run a 12-month pilot across 5 districts</li>
+    <li><strong>Partnership with Odisha Tourism</strong> for content, verification and promotion</li>
+    <li><strong>Access to district administrations</strong> for host onboarding and safety coordination</li>
+    <li><strong>Mentorship</strong> on payments, trust & safety, and rural operations</li>
+  </ul>
+  <div class="quote">"Odisha's best destinations are hiding in plain sight. We make them findable."</div>
+  <div class="footer"><span>Ask</span><span>Odisha Offbeat</span></div>
+</section>
+
+<!-- Slide 11: Contact -->
+<section class="slide cover">
+  <div class="eyebrow">Thank you</div>
+  <div class="accent-bar"></div>
+  <h1>Let's build Odisha together.</h1>
+  <p class="lead">Live demo: odisha-offbeat.vercel.app</p>
+  <p>GitHub: github.com/raawcase/odisha-offbeat</p>
+  <p style="margin-top:24px; font-size:16px;">Built with zero-cost infra · Next.js · Vercel free tier · Supabase (planned)</p>
+  <div class="footer"><span>Odisha Offbeat</span><span>Startup Odisha</span></div>
+</section>
+
+</div>
+
+<script>
+  // keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    const slides = document.querySelectorAll('.slide');
+    // find current
+    let cur = 0;
+    slides.forEach((s,i) => { const r = s.getBoundingClientRect(); if (r.top <= 120) cur = i; });
+    if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); slides[Math.min(slides.length-1, cur+1)].scrollIntoView({behavior:'smooth'}); }
+    if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); slides[Math.max(0, cur-1)].scrollIntoView({behavior:'smooth'}); }
+  });
+</script>
+</body>
+</html>
